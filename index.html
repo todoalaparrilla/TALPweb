@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo a la Parrilla - Libro Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Todo a la Parrilla</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#recetas">Recetas</a><a href="#video">Video</a><a href="#prensa">Prensa</a>
+                <a href="#" id="buyNavBtn" class="btn-primary">Comprar Libro</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-img-container">
+                <img src="img/portada.png"
+                    alt="Portada del libro Todo a la Parrilla, de Carolina Carriel e Isidora Díaz" class="hero-img"
+                    id="bookCover">
+            </div>
+            <div>
+                <span class="hero-badge">Libro Digital • E-Book</span>
+                <h1 id="bookTitle">Todo a la Parrilla</h1>
+                <p class="hero-subtitle">69 ideas para preparar y descubrir que todo es parrillable cuando hay fuego y
+                    creatividad.</p>
+                <div class="specs-pills">
+                    <span class="spec-pill"><strong>Autoras:</strong> <span id="authorName">Carolina Carriel &amp;
+                            Isidora Díaz</span></span>
+                    <span class="spec-pill"><strong>Páginas:</strong> 211</span><span
+                        class="spec-pill"><strong>Año:</strong> 2016</span>
+                    <span class="spec-pill"><strong>ISBN:</strong> 9789568935641</span><span
+                        class="spec-pill"><strong>Origen:</strong> Chile</span>
+                </div>
+                <div class="hero-actions"><span class="price-tag" id="bookPrice">$14.99 USD</span><a
+                        href="https://payhip.com" id="buyHeroBtn" class="btn-primary">Comprar en Payhip</a></div>
+            </div>
+        </section>
+        <section id="reseña">
+            <h2 class="section-title">La Filosofía Parrillera</h2>
+            <p class="section-desc">Más que un recetario, una guía para entender el fuego y el entorno.</p>
+            <div class="review-card">
+                <p>La máxima es que <strong>“todo es parrillable y parrillar es cocinar”</strong>: cualquier
+                    preparación, desde un ceviche hasta una fruta, de una tostada a un arrollado, queda más rica si pasa
+                    por el calor de las brasas y el baile naranja del fuego directo.</p>
+                <br>
+                <p>Este libro une la audacia de sabores nuevos con los gustos clásicos, basándose siempre en la
+                    alimentación consciente y responsable. Para entenderlo, las autoras aconsejan y guían al parrillero
+                    en un gesto ancestral, divertido y sabroso.</p>
+            </div>
+        </section>
+        <section id="recetas">
+            <h2 class="section-title">Sabor a las Brasas</h2>
+            <p class="section-desc">Explora algunas de las preparaciones incluidas en el libro.</p>
+            <div class="recipes-nav" role="tablist" aria-label="Categorías de recetas">
+                <button class="recipe-tab active" role="tab" aria-selected="true" onclick="showRecipe(0)">1.
+                    Picoteo</button>
+                <button class="recipe-tab" role="tab" aria-selected="false" onclick="showRecipe(1)">2. Pescados &amp;
+                    Mariscos</button>
+                <button class="recipe-tab" role="tab" aria-selected="false" onclick="showRecipe(2)">3. Sánguche</button>
+                <button class="recipe-tab" role="tab" aria-selected="false" onclick="showRecipe(3)">4. Postre</button>
+            </div>
+            <div class="recipe-card active">
+                <img src="img/ajies-rellenos.jpg" alt="Ajíes rellenos con queso maduro de vaca y envueltos en tocino"
+                    class="recipe-img">
+                <div class="recipe-content">
+                    <span class="recipe-tag">Aperitivo</span>
+                    <h3>Ajíes rellenos con queso maduro de vaca y envueltos en tocino</h3>
+                    <div class="recipe-meta"><span><strong>Preparación:</strong> 10
+                            minutos</span><span><strong>Cocción:</strong> 6 a 7
+                            minutos</span><span><strong>Para:</strong> 4 personas</span></div>
+                    <p class="ingredients-title">Ingredientes</p>
+                    <ul class="ingredients-list">
+                        <li>4 ajíes verdes (o de otro tipo no muy picantes) de 20 cm aprox.</li>
+                        <li>200 g de queso maduro de vaca, picado en trozos largos de 1 x 10 cm</li>
+                        <li>100 g de tocino laminado</li>
+                    </ul>
+                    <p class="ingredients-extra"><strong>Además vas a necesitar:</strong> palillos previamente remojados
+                        en agua por 30 minutos.</p>
+                    <button class="btn-primary" onclick="openRecipe('ajies-rellenos')">Ver preparación</button>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="img/blanquillo-boldo.jpg" alt="Blanquillo entero con boldo y naranjas" class="recipe-img">
+                <div class="recipe-content">
+                    <span class="recipe-tag">Pescados &amp; Mariscos</span>
+                    <h3>Blanquillo entero con boldo y naranjas</h3>
+                    <div class="recipe-meta"><span><strong>Preparación:</strong> 10
+                            minutos</span><span><strong>Cocción:</strong> 18 a 22
+                            minutos</span><span><strong>Para:</strong> 4 personas</span></div>
+                    <p class="ingredients-title">Ingredientes</p>
+                    <ul class="ingredients-list">
+                        <li>2 blanquillos frescos y lavados, con cabeza y cola, eviscerados</li>
+                        <li>aceite neutro suficiente para pintar el pescado</li>
+                        <li>1 naranja, en rodajas finas y cada una de ellas partida por la mitad, como medias lunas</li>
+                        <li>sal de mar</li>
+                        <li>10 a 12 ramas de boldo, romero o laurel, un poco más largas que el tamaño del pescado</li>
+                    </ul>
+                    <p class="ingredients-extra"><strong>Además vas a necesitar:</strong> hilo de algodón para amarrar
+                        carnes y brocha de cocina.</p>
+                    <button class="btn-primary" onclick="openRecipe('blanquillo-boldo')">Ver preparación</button>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="img/sanguche-arrollado.jpg" alt="Sánguche de arrollado asado con pebre y mayonesa casera"
+                    class="recipe-img">
+                <div class="recipe-content">
+                    <span class="recipe-tag">Sánguches</span>
+                    <h3>Sánguche de arrollado asado con pebre y mayonesa casera</h3>
+                    <div class="recipe-meta"><span><strong>Preparación:</strong> 25
+                            minutos</span><span><strong>Cocción:</strong> 10 minutos</span><span><strong>Para:</strong>
+                            4 personas</span></div>
+                    <p class="ingredients-title">Ingredientes</p>
+                    <ul class="ingredients-list">
+                        <li>1 arrollado de tamaño mediano, cocido, frío y cortado en rodajas gruesas</li>
+                        <li>4 panes para sánguches</li>
+                        <li>mantequilla, lo suficiente para untar las bases de los panes</li>
+                    </ul>
+                    <p class="ingredients-sub">Para la mayonesa</p>
+                    <ul class="ingredients-list">
+                        <li>1 huevo entero</li>
+                        <li>1 taza de aceite de maravilla</li>
+                        <li>jugo de ½ limón amarillo</li>
+                        <li>sal de mar</li>
+                    </ul>
+                    <p class="ingredients-sub">Para el pebre</p>
+                    <ul class="ingredients-list">
+                        <li>1 tomate grande y maduro, picado en cubos pequeños</li>
+                        <li>½ cebolla blanca, picada en cubos pequeños</li>
+                        <li>½ ají verde o similar, picado fino</li>
+                        <li>½ taza de cilantro, picadas finas</li>
+                        <li>¼ taza de vinagre</li>
+                        <li>1 cucharada de aceite neutro</li>
+                        <li>sal de mar</li>
+                    </ul>
+                    <p class="ingredients-extra"><strong>Además vas a necesitar:</strong> batidora de mano eléctrica o
+                        licuadora.</p>
+                    <button class="btn-primary" onclick="openRecipe('sanguche-arrollado')">Ver preparación</button>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <img src="img/peras-asadas.jpg" alt="Peras asadas en salsa de vino blanco, con queso de cabra y granada"
+                    class="recipe-img">
+                <div class="recipe-content">
+                    <span class="recipe-tag">Postres</span>
+                    <h3>Peras asadas en salsa de vino blanco, con queso de cabra y granada</h3>
+                    <div class="recipe-meta"><span><strong>Preparación:</strong> 15
+                            minutos</span><span><strong>Cocción:</strong> 12 a 15
+                            minutos</span><span><strong>Para:</strong> 4 personas</span></div>
+                    <p class="ingredients-title">Ingredientes</p>
+                    <ul class="ingredients-list">
+                        <li>4 peras medianas y firmes, cortadas en mitades</li>
+                        <li>2 cucharadas de mantequilla con sal</li>
+                        <li>150 g de queso de cabra maduro, en lascas gruesas</li>
+                        <li>1 granada, desgranada</li>
+                    </ul>
+                    <p class="ingredients-sub">Para la salsa</p>
+                    <ul class="ingredients-list">
+                        <li>1 ½ taza de vino blanco</li>
+                        <li>6 cucharadas de azúcar rubia</li>
+                    </ul>
+                    <p class="ingredients-extra"><strong>Además vas a necesitar:</strong> sartén mediano o grande que se
+                        pueda poner sobre la parrilla.</p>
+                    <button class="btn-primary" onclick="openRecipe('peras-asadas')">Ver preparación</button>
+                </div>
+            </div>
+        </section>
+        <section id="video">
+            <h2 class="section-title">En Acción</h2>
+            <p class="section-desc">Conoce más sobre la propuesta detrás de "Todo a la Parrilla".</p>
+            <div class="video-container"><iframe src="https://www.youtube.com/embed/_GSxv4Qn79g"
+                    title="Todo a la Parrilla - video del libro" loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <p class="video-fallback"><a class="btn-primary" href="https://www.youtube.com/watch?v=_GSxv4Qn79g"
+                    target="_blank" rel="noopener noreferrer">▶ Ver el video en YouTube</a></p>
+        </section>
+        <section id="prensa">
+            <h2 class="section-title">Notas de Prensa</h2>
+            <div class="press-grid">
+                <div class="press-item">
+                    <p class="press-quote">"Un libro audaz que demuestra que la parrilla no es solo para carnes, sino
+                        una forma de cocinar."</p><span class="press-source">— Revista Gastronómica (referencia de
+                        ejemplo)</span>
+                </div>
+                <div class="press-item">
+                    <p class="press-quote">"Fotografías espectaculares y recetas creativas con enfoque sustentable y
+                        local."</p><span class="press-source">— Diario El Mercurio (referencia de ejemplo)</span>
+                </div>
+            </div>
+        </section>
+        <section id="autoras">
+            <div class="authors-card">
+                <div class="authors-photo has-photo" id="authorsPhoto"><img src="img/autoras.jpg"
+                        alt="Carolina Carriel e Isidora Díaz sosteniendo el libro Todo a la Parrilla"></div>
+                <div>
+                    <h2 class="serif" style="margin-bottom:1rem;">Sobre las Autoras</h2>
+                    <p style="color:var(--text-muted);"><strong>Carolina Carriel &amp; Isidora Díaz</strong> son
+                        apasionadas investigadoras de la cocina a las brasas. Con el arte visual y fotografías de
+                        <strong>Araceli Paz</strong>, crearon esta obra para democratizar la parrilla y promover el
+                        respeto por los productores locales y de temporada.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h3 class="serif">Todo a la Parrilla</h3>
+        <p style="font-size:.9rem;opacity:.7;margin-top:.5rem;">Disponible en formato digital para todo el mundo.</p>
+        <div class="social-links"><a href="https://youtube.com" id="ytLink" target="_blank" rel="noopener noreferrer"
+                aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z" />
+                </svg></a><a href="https://instagram.com" id="igLink" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2ZM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0Zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9Z" />
+                </svg></a></div>
+        <p style="font-size:.8rem;opacity:.5;">© 2026 Todo a la Parrilla. Todos los derechos reservados.</p>
+    </footer>
+    <div class="modal" id="recipeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content"><button class="close-modal" onclick="closeModal()"
+                aria-label="Cerrar ventana">&times;</button>
+            <h3 id="modalTitle" style="margin-bottom:1rem;"></h3>
+            <div id="modalBody" style="white-space:pre-line;color:var(--text-muted);"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

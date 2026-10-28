@@ -311,15 +311,6 @@
             border: 0;
         }
 
-        .video-fallback {
-            text-align: center;
-            margin-top: 1.25rem;
-        }
-
-        .video-fallback .btn-primary {
-            font-size: .95rem;
-        }
-
         .press-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -329,6 +320,7 @@
         .press-item {
             background: var(--bg-card);
             padding: 0;
+            min-width: 0;
             overflow: hidden;
             border-radius: var(--radius);
             border: 1px solid var(--border);
@@ -344,6 +336,8 @@
         .press-thumb img {
             display: block;
             width: 100%;
+            max-width: 100%;
+            height: auto;
             aspect-ratio: 16 / 9;
             object-fit: cover;
             object-position: top;

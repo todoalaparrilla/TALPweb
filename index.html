@@ -27,7 +27,7 @@
     <main>
         <section class="hero">
             <div class="hero-img-container">
-                <img src="img/portada.png"
+                <img src="img/portada.webp"
                     alt="Portada del libro Todo a la Parrilla, de Carolina Carriel e Isidora Díaz" class="hero-img"
                     id="bookCover">
             </div>
@@ -65,15 +65,15 @@
             <h2 class="section-title">Sabor a las Brasas</h2>
             <p class="section-desc">Explora algunas de las preparaciones incluidas en el libro.</p>
             <div class="recipes-nav" role="tablist" aria-label="Categorías de recetas">
-                <button class="recipe-tab active" role="tab" aria-selected="true" onclick="showRecipe(0)">1.
+                <button class="recipe-tab active" role="tab" aria-selected="true" onclick="showRecipe(0)">
                     Picoteo</button>
-                <button class="recipe-tab" role="tab" aria-selected="false" onclick="showRecipe(1)">2. Pescados &amp;
+                <button class="recipe-tab" role="tab" aria-selected="false" onclick="showRecipe(1)"> Pescados &amp;
                     Mariscos</button>
-                <button class="recipe-tab" role="tab" aria-selected="false" onclick="showRecipe(2)">3. Sánguche</button>
-                <button class="recipe-tab" role="tab" aria-selected="false" onclick="showRecipe(3)">4. Postre</button>
+                <button class="recipe-tab" role="tab" aria-selected="false" onclick="showRecipe(2)"> Sánguches</button>
+                <button class="recipe-tab" role="tab" aria-selected="false" onclick="showRecipe(3)"> Postres</button>
             </div>
             <div class="recipe-card active">
-                <img src="img/ajies-rellenos.jpg" alt="Ajíes rellenos con queso maduro de vaca y envueltos en tocino"
+                <img src="img/ajies-rellenos.webp" alt="Ajíes rellenos con queso maduro de vaca y envueltos en tocino"
                     class="recipe-img">
                 <div class="recipe-content">
                     <span class="recipe-tag">Aperitivo</span>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="img/blanquillo-boldo.jpg" alt="Blanquillo entero con boldo y naranjas" class="recipe-img">
+                <img src="img/blanquillo-boldo.webp" alt="Blanquillo entero con boldo y naranjas" class="recipe-img">
                 <div class="recipe-content">
                     <span class="recipe-tag">Pescados &amp; Mariscos</span>
                     <h3>Blanquillo entero con boldo y naranjas</h3>
@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="img/sanguche-arrollado.jpg" alt="Sánguche de arrollado asado con pebre y mayonesa casera"
+                <img src="img/sanguche-arrollado.webp" alt="Sánguche de arrollado asado con pebre y mayonesa casera"
                     class="recipe-img">
                 <div class="recipe-content">
                     <span class="recipe-tag">Sánguches</span>
@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="img/peras-asadas.jpg" alt="Peras asadas en salsa de vino blanco, con queso de cabra y granada"
+                <img src="img/peras-asadas.webp" alt="Peras asadas en salsa de vino blanco, con queso de cabra y granada"
                     class="recipe-img">
                 <div class="recipe-content">
                     <span class="recipe-tag">Postres</span>
@@ -191,26 +191,48 @@
             <h2 class="section-title">Notas de Prensa</h2>
             <div class="press-grid">
                 <div class="press-item">
-                    <p class="press-quote">"Un libro audaz que demuestra que la parrilla no es solo para carnes, sino
-                        una forma de cocinar."</p><span class="press-source">— Revista Gastronómica (referencia de
-                        ejemplo)</span>
+                    <a class="press-thumb" href="https://www.latercera.com/noticia/las-reinas-de-la-parrilla" target="_blank" rel="noopener noreferrer"
+                        aria-label="Leer la noticia en La Tercera"><img src="img/prensa-la-tercera.png"
+                            alt="Vista previa de la noticia en La Tercera" loading="lazy"></a>
+                    <div class="press-body">
+                        <p class="press-quote">"Las reinas de la parrilla"</p><span class="press-source">— La Tercera</span>
+                        <a class="press-link" href="https://www.latercera.com/noticia/las-reinas-de-la-parrilla" target="_blank"
+                            rel="noopener noreferrer">Leer la noticia →</a>
+                    </div>
                 </div>
                 <div class="press-item">
-                    <p class="press-quote">"Fotografías espectaculares y recetas creativas con enfoque sustentable y
-                        local."</p><span class="press-source">— Diario El Mercurio (referencia de ejemplo)</span>
+                    <a class="press-thumb" href="https://vivirparacomer.com/2016/04/11/todo-a-la-parrilla/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Leer la noticia en Vivir para Comer"><img src="img/prensa-vivir-para-comer.png"
+                            alt="Vista previa de la noticia en Vivir para Comer" loading="lazy"></a>
+                    <div class="press-body">
+                        <p class="press-quote">"Nuevo libro: Todo a la parrilla"</p><span class="press-source">— Vivir para Comer</span>
+                        <a class="press-link" href="https://vivirparacomer.com/2016/04/11/todo-a-la-parrilla/" target="_blank"
+                            rel="noopener noreferrer">Leer la noticia →</a>
+                    </div>
+                </div>
+                <div class="press-item">
+                    <a class="press-thumb" href="https://www.diarioantofagasta.cl/tendencias/112612/todo-a-la-parrilla-un-recetario-indispensable-para-todo-amante-del-asado" target="_blank" rel="noopener noreferrer"
+                        aria-label="Leer la noticia en Diario Antofagasta"><img src="img/prensa-diario-antofagasta.png"
+                            alt="Vista previa de la noticia en Diario Antofagasta" loading="lazy"></a>
+                    <div class="press-body">
+                        <p class="press-quote">"Todo a la parrilla: un recetario indispensable para todo amante del asado"</p><span class="press-source">— Diario Antofagasta</span>
+                        <a class="press-link" href="https://www.diarioantofagasta.cl/tendencias/112612/todo-a-la-parrilla-un-recetario-indispensable-para-todo-amante-del-asado" target="_blank"
+                            rel="noopener noreferrer">Leer la noticia →</a>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="autoras">
             <div class="authors-card">
-                <div class="authors-photo has-photo" id="authorsPhoto"><img src="img/autoras.jpg"
+                <div class="authors-photo has-photo" id="authorsPhoto"><img src="img/autoras.webp"
                         alt="Carolina Carriel e Isidora Díaz sosteniendo el libro Todo a la Parrilla"></div>
                 <div>
                     <h2 class="serif" style="margin-bottom:1rem;">Sobre las Autoras</h2>
                     <p style="color:var(--text-muted);"><strong>Carolina Carriel &amp; Isidora Díaz</strong> son
                         apasionadas investigadoras de la cocina a las brasas. Con el arte visual y fotografías de
                         <strong>Araceli Paz</strong>, crearon esta obra para democratizar la parrilla y promover el
-                        respeto por los productores locales y de temporada.</p>
+                        respeto por los productores locales y de temporada.
+                    </p>
                 </div>
             </div>
         </section>

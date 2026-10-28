@@ -328,10 +328,34 @@
 
         .press-item {
             background: var(--bg-card);
-            padding: 2rem;
+            padding: 0;
+            overflow: hidden;
             border-radius: var(--radius);
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
+        }
+
+        .press-thumb {
+            display: block;
+            overflow: hidden;
+            background: var(--bg-alt);
+        }
+
+        .press-thumb img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            object-position: top;
+            transition: transform .3s ease;
+        }
+
+        .press-thumb:hover img {
+            transform: scale(1.03);
+        }
+
+        .press-body {
+            padding: 1.5rem 2rem 2rem;
         }
 
         .press-quote {
@@ -344,6 +368,19 @@
             font-size: .85rem;
             font-weight: 700;
             color: var(--primary);
+        }
+
+        .press-link {
+            display: block;
+            margin-top: .9rem;
+            font-size: .9rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .press-link:hover {
+            text-decoration: underline;
         }
 
         .authors-card {

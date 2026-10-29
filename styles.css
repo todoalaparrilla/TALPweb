@@ -1,4 +1,4 @@
-        :root {
+:root {
             --bg-main: #FFFDF9;
             --bg-card: #FFFFFF;
             --bg-alt: #F4F7F8;
@@ -423,6 +423,118 @@
             width: 40px;
             height: 40px;
             opacity: .6;
+        }
+
+        .nav-links a.active:not(.btn-primary) {
+            color: var(--primary);
+        }
+
+        .authors-profiles {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            scroll-margin-top: 90px;
+        }
+
+        .authors-profiles[hidden] {
+            display: none;
+        }
+
+        .authors-profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2rem;
+        }
+
+        .author-profile {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+        }
+
+        .author-profile-photo {
+            width: 180px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--bg-alt);
+            border: 2px dashed var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: .4rem;
+            color: var(--text-muted);
+            font-size: .8rem;
+        }
+
+        .author-profile-photo svg {
+            width: 40px;
+            height: 40px;
+            opacity: .6;
+        }
+
+        .author-profile-photo.has-photo {
+            border: 0;
+        }
+
+        .author-profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .author-profile-cv {
+            color: var(--text-muted);
+            text-align: left;
+            white-space: pre-line;
+        }
+
+        .author-ig {
+            display: inline-flex;
+            color: var(--primary);
+            transition: color .2s, transform .2s;
+        }
+
+        .author-ig:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .author-ig svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        .close-authors {
+            position: absolute;
+            top: 1rem;
+            right: 1.25rem;
+            background: none;
+            border: 0;
+            font-size: 2rem;
+            line-height: 1;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .close-authors:hover {
+            color: var(--text-dark);
+        }
+
+        @media (max-width: 768px) {
+            .authors-profiles-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         footer {

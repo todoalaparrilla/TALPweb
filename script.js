@@ -2,10 +2,23 @@ const CONFIG = {
     titulo: "Todo a la Parrilla",
     autoras: "Carolina Carriel  /  Isidora Díaz",
     precio: "$14.99 USD",
-    payhipUrl: "https://www.payhip.com/",
-    instagramUrl: "https://www.instagram.com/",
-    youtubeUrl: "https://www.youtube.com/watch?v=_GSxv4Qn79g",
-    fotoAutorasUrl: ""
+    payhipUrl: "https://payhip.com/b/1HPcz",
+    instagramUrl: "https://www.instagram.com/todoalaparrillalibro/",
+    youtubeUrl: "https://www.youtube.com/@todoalaparrilla8251",
+    fotoAutorasUrl: "",
+    // Sección "Autoras" (se abre con el botón "Saber más" o desde el menú)
+    autora1: {
+        nombre: "Carolina Carriel",
+        cv: "Cocinera autodidacta e Ingeniera en biotecnología molecular de la Universidad de Chile. Sus abuelas Tita y Elsa le enseñaron desde niña a apreciar los platos humildes de antes y los secretos de la sazón de la cocina chilena tradicional. Así, en paralelo a su formación profesional como científica, transformó su amor por la cocina en acciones concretas. Desde 2010 forma parte de Slow Food Internacional, y al igual que Isidora es miembro fundadora de la comunidad Pilgua SCL en Santiago, asumiendo como líder en dos periodos.\nHoy es Directora de Relaciones Internacionales de Slow Food Chile.\nEn su paso por Nueva Zelanda (2015-2017) cocinó en diversos restaurantes y conoció la revitalización de la cocina maorí. Durante su reciente estadía en Brasil volvió al quehacer científico, a la vez que aprendió sobre cocina brasileña y conoció muy de cerca la parrilla local, trabajando en eventos con mujeres parrilleras brasileñas. Hoy de vuelta en Chile, Carolina se mueve entre la ciencia y la cocina, experimentando con fuegos y fermentados.",
+        fotoUrl: "",
+        instagramUrl: "https://www.instagram.com/caro_car"
+    },
+    autora2: {
+        nombre: "Isidora Díaz",
+        cv: "Cocinera autodidacta y cronista gastronómica. A los diez años ya ayudaba a su papá en los asados familiares, a la vez que aprendía sobre sánguches en el Millahue, el exitoso restaurante de su mamá en el Arauco noventero.\nDe profesión Profesora de Filosofía de la Universidad de Chile, también ha dictado clases sobre cultura gastronómica y cocina chilena y sudamericana en escuelas de cocina en Santiago, Estados Unidos y recientemente en Dinamarca. También ha trabajado como periodista gastronómica, colaborando con medios en Chile y el extranjero, desde 2011 hasta la fecha.\nEn 2011 fue elegida como uno de los 100 jóvenes líderes por el diario El Mercurio.\nEs miembro de Slow Food Internacional desde 2010 y miembro fundadora de la comunidad Pilgua SCL en Santiago. Desde 2017 reside en Copenhagen, donde trabaja como instructora culinaria en Meyers Madhus y cursa el Máster en Estudios Alimentarios Integrados en la Universidad de Copenhagen.",
+        fotoUrl: "",
+        instagramUrl: "https://www.instagram.com/isidoradiaz/"
+    }
 };
 
 const setText = (id, value) => {
@@ -37,6 +50,48 @@ document.addEventListener("DOMContentLoaded", () => {
             img.alt = "Fotografía de " + CONFIG.autoras;
             box.appendChild(img);
         }
+    }
+
+    [CONFIG.autora1, CONFIG.autora2].forEach((a, i) => {
+        const n = i + 1;
+        setText("author" + n + "Name", a.nombre);
+        setText("author" + n + "Cv", a.cv);
+        setHref("author" + n + "Ig", a.instagramUrl);
+        if (a.fotoUrl) {
+            const box = document.getElementById("author" + n + "Photo");
+            if (box) {
+                box.classList.add("has-photo");
+                box.innerHTML = "";
+                const img = document.createElement("img");
+                img.src = a.fotoUrl;
+                img.alt = "Fotografía de " + a.nombre;
+                box.appendChild(img);
+            }
+        }
+    });
+
+    const authorsSection = document.getElementById("perfil-autoras");
+    const moreBtn = document.getElementById("moreAuthorsBtn");
+    const navAuthors = document.getElementById("authorsNavBtn");
+    const closeAuthors = document.getElementById("closeAuthorsBtn");
+    const openAuthors = event => {
+        if (event) event.preventDefault();
+        authorsSection.hidden = false;
+        if (moreBtn) moreBtn.setAttribute("aria-expanded", "true");
+        if (navAuthors) navAuthors.classList.add("active");
+        authorsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    const hideAuthors = () => {
+        authorsSection.hidden = true;
+        if (moreBtn) moreBtn.setAttribute("aria-expanded", "false");
+        if (navAuthors) navAuthors.classList.remove("active");
+        const base = document.getElementById("autoras");
+        if (base) base.scrollIntoView({ behavior: "smooth", block: "center" });
+    };
+    if (authorsSection) {
+        if (moreBtn) moreBtn.addEventListener("click", openAuthors);
+        if (navAuthors) navAuthors.addEventListener("click", openAuthors);
+        if (closeAuthors) closeAuthors.addEventListener("click", hideAuthors);
     }
 
     const menuBtn = document.getElementById("mobileMenuBtn");

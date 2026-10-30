@@ -1,7 +1,7 @@
 const CONFIG = {
     titulo: "Todo a la Parrilla",
     autoras: "Carolina Carriel  /  Isidora Díaz",
-    precio: "$14.99 USD",
+    precio: "$11.990 CLP",
     payhipUrl: "https://payhip.com/b/1HPcz",
     instagramUrl: "https://www.instagram.com/todoalaparrillalibro/",
     youtubeUrl: "https://www.youtube.com/@todoalaparrilla8251",

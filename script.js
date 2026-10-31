@@ -7,7 +7,7 @@ const CONFIG = {
     youtubeUrl: "https://www.youtube.com/@todoalaparrilla8251",
     facebookUrl: "https://www.facebook.com/todoalaparrillalibro/",
     // Google Analytics 4: pega aquí tu ID de medición (formato G-XXXXXXXXXX). Vacío = sin analítica.
-    gaId: "G-RBZBYT8B55",
+    gaId: "G-6Z25SV49RT",
     fotoAutorasUrl: "",
     // Sección "Autoras" (se abre con el botón "Saber más" o desde el menú)
     autora1: {

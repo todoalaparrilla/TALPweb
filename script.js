@@ -250,3 +250,70 @@ document.getElementById("recipeModal").addEventListener("click", event => {
     if (event.target.id === "recipeModal") closeModal();
 });
 document.addEventListener("keydown", event => { if (event.key === "Escape") closeModal(); });
+
+// ===== Ventana emergente de ayuda y legales (pie de página) =====
+(function () {
+    const modal = document.getElementById("infoModal");
+    if (!modal) return;
+    const titleEl = document.getElementById("infoTitle");
+    const subEl = document.getElementById("infoSub");
+    const bodyEl = document.getElementById("infoBody");
+    const tabs = modal.querySelectorAll("[data-info-tab]");
+    let lastFocus = null;
+
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    const withEmail = s => esc(s).replace(/\{\{EMAIL\}\}/g,
+        '<a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a>').replace(/\n/g, "<br>");
+    const blocks = arr => arr.map(b => Array.isArray(b)
+        ? "<ul>" + b.map(li => "<li>" + withEmail(li) + "</li>").join("") + "</ul>"
+        : "<p>" + withEmail(b) + "</p>").join("");
+
+    function render(key) {
+        const d = INFO[key];
+        if (!d) return;
+        titleEl.textContent = d.titulo;
+        subEl.textContent = d.sub || "";
+        subEl.hidden = !d.sub;
+        if (key === "faq") {
+            bodyEl.innerHTML = d.items.map((it, i) =>
+                '<details class="faq-item"><summary>' + esc(it.q) + "</summary><div>" + blocks(it.a) + "</div></details>"
+            ).join("") +
+                '<p class="info-foot">¿Tienes otra pregunta? Escríbenos a <a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + "</a>. ¡Estaremos encantadas de ayudarte!</p>";
+        } else {
+            bodyEl.innerHTML = d.secciones.map((sec, i) =>
+                "<h4>" + (i + 1) + ". " + esc(sec.t) + "</h4>" + blocks(sec.b)).join("");
+        }
+        bodyEl.scrollTop = 0;
+        tabs.forEach(t => t.setAttribute("aria-current", t.dataset.infoTab === key ? "true" : "false"));
+        modal.dataset.current = key;
+    }
+
+    window.openInfo = function (key) {
+        if (!INFO[key]) return;
+        if (modal.style.display !== "flex") lastFocus = document.activeElement;
+        render(key);
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+        modal.querySelector(".close-modal").focus();
+        if (history.replaceState) history.replaceState(null, "", "#" + key);
+    };
+    window.closeInfo = function () {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+        if (history.replaceState && ["faq", "terminos", "privacidad"].includes(location.hash.slice(1)))
+            history.replaceState(null, "", location.pathname + location.search);
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+    };
+
+    document.querySelectorAll("[data-info]").forEach(a => a.addEventListener("click", e => {
+        e.preventDefault();
+        openInfo(a.dataset.info);
+    }));
+    tabs.forEach(t => t.addEventListener("click", () => openInfo(t.dataset.infoTab)));
+    modal.addEventListener("click", e => { if (e.target === modal) closeInfo(); });
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape" && modal.style.display === "flex") closeInfo();
+    });
+    // Permite enlazar directo: todoalaparrilla.cl/#faq, #terminos, #privacidad
+    if (INFO[location.hash.slice(1)]) openInfo(location.hash.slice(1));
+})();

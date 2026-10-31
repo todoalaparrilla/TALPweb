@@ -5,6 +5,7 @@ const CONFIG = {
     payhipUrl: "https://payhip.com/b/1HPcz",
     instagramUrl: "https://www.instagram.com/todoalaparrillalibro/",
     youtubeUrl: "https://www.youtube.com/@todoalaparrilla8251",
+    facebookUrl: "https://www.facebook.com/todoalaparrillalibro/",
     fotoAutorasUrl: "",
     // Sección "Autoras" (se abre con el botón "Saber más" o desde el menú)
     autora1: {
@@ -49,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setHref("buyNavBtn", CONFIG.payhipUrl);
     setHref("igLink", CONFIG.instagramUrl);
     setHref("ytLink", CONFIG.youtubeUrl);
+    setHref("fbLink", CONFIG.facebookUrl);
 
     if (CONFIG.fotoAutorasUrl) {
         const box = document.getElementById("authorsPhoto");

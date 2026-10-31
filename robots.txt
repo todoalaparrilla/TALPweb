@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://todoalaparrilla.cl/sitemap.xml

@@ -6,6 +6,8 @@ const CONFIG = {
     instagramUrl: "https://www.instagram.com/todoalaparrillalibro/",
     youtubeUrl: "https://www.youtube.com/@todoalaparrilla8251",
     facebookUrl: "https://www.facebook.com/todoalaparrillalibro/",
+    // Google Analytics 4: pega aquí tu ID de medición (formato G-XXXXXXXXXX). Vacío = sin analítica.
+    gaId: "G-RBZBYT8B55",
     fotoAutorasUrl: "",
     // Sección "Autoras" (se abre con el botón "Saber más" o desde el menú)
     autora1: {
@@ -31,6 +33,17 @@ Actualmente es docente del diplomado en Estudios Gastronómicos de la Universida
         instagramUrl: "https://www.instagram.com/isidoradiaz/"
     }
 };
+
+if (CONFIG.gaId) {
+    const gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(CONFIG.gaId);
+    document.head.appendChild(gaScript);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", CONFIG.gaId);
+}
 
 const setText = (id, value) => {
     const element = document.getElementById(id);

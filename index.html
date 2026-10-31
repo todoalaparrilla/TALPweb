@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo a la Parrilla - Libro Digital</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
+    <meta name="description" content="E-book &quot;Todo a la Parrilla&quot;: 69 ideas para cocinar de todo a las brasas, de Carolina Carriel e Isidora Díaz. Libro digital chileno de recetas a la parrilla.">
+    <link rel="canonical" href="https://todoalaparrilla.cl/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Todo a la Parrilla - Libro Digital">
+    <meta property="og:description" content="69 ideas para preparar y descubrir que todo es parrillable cuando hay fuego y creatividad.">
+    <meta property="og:url" content="https://todoalaparrilla.cl/">
+    <meta property="og:image" content="https://todoalaparrilla.cl/img/portada.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://payhip.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="https://payhip.com/js/payhip.js"></script>
+    <script type="text/javascript" src="https://payhip.com/js/payhip.js" defer></script>
 </head>
 
 <body>
@@ -32,7 +40,7 @@
             <div class="hero-img-container">
                 <img src="img/portada.webp"
                     alt="Portada del libro Todo a la Parrilla, de Carolina Carriel e Isidora Díaz" class="hero-img"
-                    id="bookCover">
+                    id="bookCover" fetchpriority="high" decoding="async">
             </div>
             <div>
                 <span class="hero-badge">Libro Digital • E-Book</span>
@@ -77,7 +85,7 @@
             </div>
             <div class="recipe-card active">
                 <img src="img/ajies-rellenos.webp" alt="Ajíes rellenos con queso maduro de vaca y envueltos en tocino"
-                    class="recipe-img">
+                    class="recipe-img" loading="lazy" decoding="async">
                 <div class="recipe-content">
                     <span class="recipe-tag">Aperitivo</span>
                     <h3>Ajíes rellenos con queso maduro de vaca y envueltos en tocino</h3>
@@ -96,7 +104,7 @@
                 </div>
             </div>
             <div class="recipe-card">
-                <img src="img/blanquillo-boldo.webp" alt="Blanquillo entero con boldo y naranjas" class="recipe-img">
+                <img src="img/blanquillo-boldo.webp" alt="Blanquillo entero con boldo y naranjas" class="recipe-img" loading="lazy" decoding="async">
                 <div class="recipe-content">
                     <span class="recipe-tag">Pescados &amp; Mariscos</span>
                     <h3>Blanquillo entero con boldo y naranjas</h3>
@@ -118,7 +126,7 @@
             </div>
             <div class="recipe-card">
                 <img src="img/sanguche-arrollado.webp" alt="Sánguche de arrollado asado con pebre y mayonesa casera"
-                    class="recipe-img">
+                    class="recipe-img" loading="lazy" decoding="async">
                 <div class="recipe-content">
                     <span class="recipe-tag">Sánguches</span>
                     <h3>Sánguche de arrollado asado con pebre y mayonesa casera</h3>
@@ -155,7 +163,7 @@
             </div>
             <div class="recipe-card">
                 <img src="img/peras-asadas.webp" alt="Peras asadas en salsa de vino blanco, con queso de cabra y granada"
-                    class="recipe-img">
+                    class="recipe-img" loading="lazy" decoding="async">
                 <div class="recipe-content">
                     <span class="recipe-tag">Postres</span>
                     <h3>Peras asadas en salsa de vino blanco, con queso de cabra y granada</h3>
@@ -183,7 +191,7 @@
         <section id="video">
             <h2 class="section-title">En Acción</h2>
             <p class="section-desc">Conoce más sobre la propuesta detrás de "Todo a la Parrilla".</p>
-            <div class="video-container"><iframe width="873" height="491" src="https://www.youtube.com/embed/_GSxv4Qn79g" title="Lanzamiento Todo a la parrilla" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <div class="video-container"><iframe width="873" height="491" src="https://www.youtube-nocookie.com/embed/_GSxv4Qn79g" loading="lazy" title="Lanzamiento Todo a la parrilla" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
         </section>
         <section id="prensa">
             <h2 class="section-title">Notas de Prensa</h2>
@@ -191,8 +199,8 @@
             <div class="press-grid">
                 <div class="press-item">
                     <a class="press-thumb" href="https://www.latercera.com/noticia/las-reinas-de-la-parrilla" target="_blank" rel="noopener noreferrer"
-                        aria-label="Leer la noticia en La Tercera"><img src="img/prensa-la-tercera.png"
-                            alt="Vista previa de la noticia en La Tercera" loading="lazy"></a>
+                        aria-label="Leer la noticia en La Tercera"><img src="img/prensa-la-tercera.webp"
+                            alt="Vista previa de la noticia en La Tercera" loading="lazy" decoding="async"></a>
                     <div class="press-body">
                         <p class="press-quote">"Las reinas de la parrilla"</p><span class="press-source">— La Tercera</span>
                         <a class="press-link" href="https://www.latercera.com/noticia/las-reinas-de-la-parrilla" target="_blank"
@@ -201,8 +209,8 @@
                 </div>
                 <div class="press-item">
                     <a class="press-thumb" href="https://vivirparacomer.com/2016/04/11/todo-a-la-parrilla/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Leer la noticia en Vivir para Comer"><img src="img/prensa-vivir-para-comer.png"
-                            alt="Vista previa de la noticia en Vivir para Comer" loading="lazy"></a>
+                        aria-label="Leer la noticia en Vivir para Comer"><img src="img/prensa-vivir-para-comer.webp"
+                            alt="Vista previa de la noticia en Vivir para Comer" loading="lazy" decoding="async"></a>
                     <div class="press-body">
                         <p class="press-quote">"Nuevo libro: Todo a la parrilla"</p><span class="press-source">— Vivir para Comer</span>
                         <a class="press-link" href="https://vivirparacomer.com/2016/04/11/todo-a-la-parrilla/" target="_blank"
@@ -211,8 +219,8 @@
                 </div>
                 <div class="press-item">
                     <a class="press-thumb" href="https://www.diarioantofagasta.cl/tendencias/112612/todo-a-la-parrilla-un-recetario-indispensable-para-todo-amante-del-asado" target="_blank" rel="noopener noreferrer"
-                        aria-label="Leer la noticia en Diario Antofagasta"><img src="img/prensa-diario-antofagasta.png"
-                            alt="Vista previa de la noticia en Diario Antofagasta" loading="lazy"></a>
+                        aria-label="Leer la noticia en Diario Antofagasta"><img src="img/prensa-diario-antofagasta.webp"
+                            alt="Vista previa de la noticia en Diario Antofagasta" loading="lazy" decoding="async"></a>
                     <div class="press-body">
                         <p class="press-quote">"Todo a la parrilla: un recetario indispensable para todo amante del asado"</p><span class="press-source">— Diario Antofagasta</span>
                         <a class="press-link" href="https://www.diarioantofagasta.cl/tendencias/112612/todo-a-la-parrilla-un-recetario-indispensable-para-todo-amante-del-asado" target="_blank"
@@ -224,7 +232,7 @@
         <section id="autoras">
             <div class="authors-card">
                 <div class="authors-photo has-photo" id="authorsPhoto"><img src="img/autoras.webp"
-                        alt="Carolina Carriel e Isidora Díaz sosteniendo el libro Todo a la Parrilla"></div>
+                        alt="Carolina Carriel e Isidora Díaz sosteniendo el libro Todo a la Parrilla" loading="lazy" decoding="async"></div>
                 <div>
                     <h2 class="serif" style="margin-bottom:1rem;">Sobre las Autoras</h2>
                     <p style="color:var(--text-muted);"><strong>Carolina Carriel e Isidora Díaz</strong> son
@@ -244,7 +252,7 @@
             <div class="authors-profiles-grid">
                 <article class="author-profile">
                     <div class="author-profile-photo" id="author1Photo">
-                        <img src="img/caro.webp" alt="Carolina, autora del libro">
+                        <img src="img/caro.webp" alt="Carolina, autora del libro" loading="lazy" decoding="async">
                     </div>
                     <div class="author-profile-heading">
 
@@ -259,7 +267,7 @@
                 </article>
                 <article class="author-profile">
                     <div class="author-profile-photo" id="author2Photo">
-                        <img src="img/isi.webp" alt="Isi, autora del libro">
+                        <img src="img/isi.webp" alt="Isi, autora del libro" loading="lazy" decoding="async">
                     </div>
                     <div class="author-profile-heading">
 

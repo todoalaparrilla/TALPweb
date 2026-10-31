@@ -483,6 +483,7 @@
 
         .author-profile-photo.has-photo {
             border: 0;
+            background: transparent;
         }
 
         .author-profile-photo img {
@@ -856,4 +857,5 @@
     object-fit: cover;
     display: block;
     border-radius: inherit;
+    transform: scale(1.05);
 }

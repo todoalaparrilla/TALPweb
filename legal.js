@@ -8,13 +8,13 @@ const INFO = {
    {
     "q": "¿Qué es Todo a la Parrilla?",
     "a": [
-     "Todo a la Parrilla es un libro digital creado por las autoras Carolina Carriel e Isidora Díaz, pensado para quienes disfrutan de la cocina a la parrilla y desean descubrir nuevas ideas, preparaciones y experiencias gastronómicas."
+     "Todo a la Parrilla es el título de un libro creado por las autoras Carolina Carriel e Isidora Díaz, pensado para quienes disfrutan de la cocina a la parrilla y desean descubrir nuevas ideas, preparaciones y experiencias gastronómicas."
     ]
    },
    {
     "q": "¿El libro se vende en formato físico o digital?",
     "a": [
-     "Este libro se comercializó en formato impreso hace algún tiempo, pero actualmente no quedan ejemplares disponibles para su distribución en físico hasta nuevo aviso. Por ahora se comercializa únicamente en formato digital."
+     "Este libro se comercializó en formato impreso hace algún tiempo, pero actualmente no quedan ejemplares disponibles para su distribución en físico (hasta nuevo aviso). Por ahora se comercializa únicamente en formato digital."
     ]
    },
    {

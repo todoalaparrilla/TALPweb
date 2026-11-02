@@ -12,7 +12,7 @@ const CONFIG = {
     // Sección "Autoras" (se abre con el botón "Saber más" o desde el menú)
     autora1: {
         nombre: "Carolina Carriel",
-        cv: `Cocinera autodidacta e Ingeniera en Biotecnología molecular (UdeChile). Su pasión por la cocina nació en la infancia, de la mano de sus abuelas Tita y Elsa, quienes le transmitieron los secretos y sabores de la cocina chilena tradicional.
+        cv: `Cocinera autodidacta e Ingeniera en Biotecnología Molecular (U.de Chile). Su pasión por la cocina nació en la infancia, de la mano de sus abuelas Tita y Elsa, quienes le transmitieron los secretos y sabores de la cocina chilena tradicional.
 
 En paralelo a su formación científica, fue convirtiendo ese amor por la gastronomía en una experiencia concreta: cocinó en diversos restaurantes de Nueva Zelanda, impartió talleres de parrilla y, más tarde, encontró en la industria FoodTech el espacio para integrar sus dos grandes pasiones: la ciencia y la cocina.
 
